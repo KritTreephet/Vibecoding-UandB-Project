@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แอปบันทึกรายรับ-รายจ่าย</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <main class="app-container">
+        <h1>Expense Tracker</h1>
+        <p class="subtitle">บันทึกรายรับ-รายจ่ายของคุณในรูปแบบที่ทันสมัย</p>
+
+        <div class="form-layout">
+            <div class="input-section card">
+                <h2><span class="icon">📈</span> รายรับ</h2>
+                <div class="input-group">
+                    <label for="income-side">รายได้จากงานเสริม:</label>
+                    <input type="number" id="income-side" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="income-allowance">รายได้จากค่าขนม:</label>
+                    <input type="number" id="income-allowance" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="input-section card">
+                <h2><span class="icon">💸</span> รายจ่าย</h2>
+                <div class="input-group">
+                    <label for="expense-food">ค่ากิน:</label>
+                    <input type="number" id="expense-food" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="expense-work">ค่างาน:</label>
+                    <input type="number" id="expense-work" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="expense-shopping">ช้อปปิ้ง:</label>
+                    <input type="number" id="expense-shopping" placeholder="0.00">
+                </div>
+            </div>
+        </div>
+
+        <button id="calculate-btn">คำนวณและสรุปผล</button>
+
+        <hr>
+
+        <div class="results-layout">
+            <div id="summary" class="card">
+                <h3>สรุปผล</h3>
+                <div class="summary-item">
+                    <span>รายรับรวม:</span>
+                    <span id="total-income" class="text-income">0</span>
+                </div>
+                 <div class="summary-item">
+                    <span>รายจ่ายรวม:</span>
+                    <span id="total-expense" class="text-expense">0</span>
+                </div>
+                 <div class="summary-item balance">
+                    <span>คงเหลือ:</span>
+                    <span id="balance" class="text-balance">0</span>
+                </div>
+            </div>
+            
+            <div class="chart-container card">
+                <canvas id="expense-chart"></canvas>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
